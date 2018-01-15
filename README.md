@@ -1,4 +1,4 @@
-# Skeleton app with Node.js + express + angular
+# Funkey chat app with Node.js + express + angular
 
 ## Requirements
 
@@ -6,12 +6,11 @@
 
 ## Installation
 
-1. `git clone git@github.com:forter/node-skeleton.git`
-2. `cd node-skeleton`
+1. `git clone https://github.com/baravit/FunkyChat.git`
+2. `cd FunkeyChat`
 3. `npm install`
 3. `npm start`
 4. Go to `http://localhost:3000`
-5. Enjoy life.
 
 ## Usage
 
