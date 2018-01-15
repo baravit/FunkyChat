@@ -1,0 +1,50 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+<meta charset="utf-8">
+<title>Funky Chat</title>
+
+<!-- Load js dep -->
+<script src="js/lib/angular.min.js"></script>
+<script src="js/app.js"></script>
+<link href="css/main.css" rel="stylesheet" />
+<link
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+	rel="stylesheet" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+</head>
+<!-- appController -->
+<body ng-controller="appController">
+	<div class="container" ng-controller="questionsController">
+		<div class="nickName">
+			<i class="fa fa-user"></i>Nickname:<input type="text"
+				ng-model="userName" />
+		</div>
+		<div class="center">
+			<h1>Funky Chat</h1>
+			<input type="text" ng-model="newQuestion" class="quest" />
+			<button ng-click="addQuestion()">
+				<i class="fa fa-question-circle"></i>
+			</button>
+		</div>
+		<div class="questions center">
+			<div class="question"
+				ng-repeat="question in questions track by $index">
+				<i class="fa fa-question-circle"></i> <span class="userName">
+					{{ question.userName }} </span> Asked : {{ question.text }}
+				<div ng-controller="answersController">
+					<input type="text" ng-model="newAnswer" />
+					<button ng-click="addAnswer($index)">Add answer</button>
+					<div>Answers:</div>
+					<div class="answer" ng-repeat="answer in questions[$index].answers">
+						<i class="fa fa-quote-left"></i> <span class="userName"> {{
+							answer.userName }} </span> replay : {{ answer.text }}
+					</div>
+				</div>
+			</div>
+		</div>
+</body>
+</html>
